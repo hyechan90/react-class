@@ -1,22 +1,38 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+div.root {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  width: 100vw;
 }
 
-.App-link {
-  color: #09d3ac;
+div.root * {
+  border: 1px solid black;
+  margin: 3px;
+}
+
+div .root > header {
+  height: 20%;
+}
+#root > div > div > section {
+  background-color: skyblue;
+}
+
+div.root > nav {
+  height: 10%;
+}
+
+div.root > div > {
+  flex: 1;
+}
+
+div.root > div > section {
+  left: 0;
+}
+
+div.root > div > aside {
+  right: 0;
+}
+
+div.root > footer {
+  height: 20%;
 }
