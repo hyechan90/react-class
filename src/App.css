@@ -5,34 +5,88 @@ div.root {
   width: 100vw;
 }
 
-div.root * {
+div.root > header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 5%;
+  margin: 5px;
+}
+
+div.root > header > div {
+  margin: 5px;
+}
+
+div.root > header > div > img {
+  height: 25px;
+  margin: 5px;
+}
+
+div.root > section {
+  height: 90%;
+  margin-top: 7%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.root > section > .serachBar div {
+  margin: 10px;
+}
+
+div.root > section > .serachBar img {
+  height: 30px;
+  margin-top: 2px;
+}
+
+div.root > section > .serachBar input {
+  height: 30px;
+  width: 500px;
+}
+
+div.root > section > .serachBar {
   border: 1px solid black;
-  margin: 3px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
 }
 
-div .root > header {
-  height: 20%;
-}
-#root > div > div > section {
-  background-color: skyblue;
-}
-
-div.root > nav {
-  height: 10%;
-}
-
-div.root > div > {
-  flex: 1;
+div.root > section .plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  flex-direction: column;
+  margin-top: 30px;
 }
 
-div.root > div > section {
-  left: 0;
+div.root > section .plus:hover {
+  border: 1px solid black;
 }
 
-div.root > div > aside {
-  right: 0;
+div.root > section .plus > img {
+  height: 50px;
+}
+
+div.root > section .plus > div {
+  margin-top: 10px;
+  font-size: 13px;
 }
 
 div.root > footer {
-  height: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 5%;
+  margin: 5px;
+}
+
+div.root > footer .customSetting {
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+div.root > footer .customSetting > div {
+  margin: 5px;
 }
