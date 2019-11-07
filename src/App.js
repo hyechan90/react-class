@@ -24,7 +24,7 @@ function App() {
         </div>
       </header>
 
-      <section>
+      <section>ia
         <div className="google">
           <img src={google} />
         </div>
