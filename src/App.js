@@ -25,7 +25,7 @@ function App() {
       </header>
 
       <section>
-        <div>
+        <div className="google">
           <img src={google} />
         </div>
         <div className="serachBar">
