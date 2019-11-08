@@ -1,61 +1,41 @@
-import React from "react";
-import logo from "./google_app_icon.png";
-import profile from "./profile.png";
-import google from "./google.png";
-import glass from "./magnifying_glass.png";
-import mic from "./mic.png";
-import plus from "./plus.png";
-import "./App.css";
+import React from 'react';
+import MyName from './MyName';
+import Student from './Student';
+import Counter from './Counter';
+import TodoItem from './TodoItem';
 
-function App() {
-  return (
-    <div className="root">
-      <header>
-        <div className="gmail">Gmail</div>
-        <div className="image">이미지</div>
-        <div className="icon">
-          <img src={logo} title={"Google apps"} />
-        </div>
-        <div className="profile">
-          <img
-            src={profile}
-            title={"Google Account: 홍길동\n(honggiddong@gmail.com"}
-          />
-        </div>
-      </header>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [],
+      value: '',
+    };
+  }
 
-      <section>ia
-        <div className="google">
-          <img src={google} />
-        </div>
-        <div className="serachBar">
-          <div>
-            <img src={glass} />
-          </div>
-          <div>
-            <input
-              type="text"
-              align="center"
-              placeholder="Google 검색 또는 URL 입력"
-            />
-          </div>
-          <div>
-            <img src={mic} />
-          </div>
-        </div>
-        <div className="plus">
-          <img src={plus} />
-          <div>바로가기 추가</div>
-        </div>
-      </section>
+  onChange = e => {
+    this.setState({ value: e.target.value });
+  };
 
-      <footer>
-        <div className="customSetting">
-          <div>맞춤설정</div>
-        </div>
-      </footer>
-    </div>
-  );
+  onClickAdd = e => {
+    const items = this.state.items;
+    items.push(this.state.value);
+    this.setState({
+      items,
+    });
+  };
+
+  render() {
+    return (
+      <>
+        <input type='text' onChange={this.onChange} />
+        <button onClick={this.onClickAdd}>추가</button>
+        {this.state.items.map((value, idx) => (
+          <TodoItem key={idx} value={value} />
+        ))}
+      </>
+    );
+  }
 }
 
 export default App;
