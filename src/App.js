@@ -22,6 +22,7 @@ class App extends React.Component {
     items.push(this.state.value);
     this.setState({
       items,
+      value: null,
     });
   };
 
