@@ -1,12 +1,13 @@
 // Counter.jsx
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { div } from 'styled-components';
 
 class TodoItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
       value: this.props.value,
+      show: true,
     };
   }
 
@@ -15,12 +16,12 @@ class TodoItem extends Component {
     this.setState({ value: change });
   };
   onClickDelete = e => {
-    
+    this.setState({ show: false });
   };
 
   render() {
     return (
-      <div className='all'>
+      <div style={{ display: this.state.show ? 'block' : 'none' }}>
         <span>{this.state.value}</span>
         <button onClick={this.onClickChange}>수정</button>
         <button onClick={this.onClickDelete}>삭제</button>
