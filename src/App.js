@@ -43,7 +43,12 @@ class App extends React.Component {
             onChange={this.onChange}
             style={({ border: "1px solid black" }, { height: "20px" })}
           />
-          <button onClick={this.onClickAdd}>추가</button>
+          <button
+            onClick={this.onClickAdd}
+            style={({ border: "none" }, { color: "black" })}
+          >
+            추가
+          </button>
 
           {this.state.items.map((value, idx) => (
             <TodoItem key={idx} value={value} />
