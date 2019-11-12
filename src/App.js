@@ -34,6 +34,13 @@ class App extends React.Component {
     });
   };
 
+  onClickDel = idx => {
+    const items = this.state.items;
+    this.setState({
+      items: [...items.slice(0, idx), ...items.slice(idx + 1)]
+    });
+  };
+
   render() {
     return (
       <>
@@ -51,7 +58,14 @@ class App extends React.Component {
           </button>
 
           {this.state.items.map((value, idx) => (
-            <TodoItem key={idx} value={value} />
+            <TodoItem
+              onClickDel={() => {
+                this.onClickDel(idx);
+              }}
+              keys={idx}
+              value={value}
+              className="list"
+            />
           ))}
         </Div>
       </>
