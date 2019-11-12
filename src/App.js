@@ -35,10 +35,10 @@ class App extends React.Component {
   };
 
   onClickDel = idx => {
-    const items = this.state.items;
-    this.setState({
-      items: [...items.slice(0, idx), ...items.slice(idx + 1)]
-    });
+    const newItems = [...this.state.items];
+    newItems.splice(idx, 1);
+    this.setState({ items: newItems });
+    console.log(idx);
   };
 
   render() {
@@ -59,10 +59,8 @@ class App extends React.Component {
 
           {this.state.items.map((value, idx) => (
             <TodoItem
-              onClickDel={() => {
-                this.onClickDel(idx);
-              }}
-              keys={idx}
+              onClickDel={() => this.onClickDel(idx)}
+              key={Math.random() + idx}
               value={value}
               className="list"
             />
